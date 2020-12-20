@@ -1,23 +1,18 @@
-import logo from './logo.svg';
+import React from 'react'
 import './App.css';
+import { Link } from "wouter";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      <section className="App-content">
+        <Link to='/'>
+          <img className="App-logo" alt="Trival App logo" src='/logo.png' />
+        </Link>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Testing.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      </section>
     </div>
   );
 }
