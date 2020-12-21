@@ -1,17 +1,17 @@
 import React, { useState } from 'react'
-import { Link, useLocation } from 'wouter'
+import { useLocation } from 'wouter'
 import ListOfContents from '../../components/ListOfContents'
-import { useContents } from '../../hooks/useContents';
+import { useContents } from '../../hooks/useContents'
 
 export default function Home () {
   const [keyword, setKeyword] = useState('')
-  const [path, pushLocation] = useLocation()
+  const [, pushLocation] = useLocation()
 
   const {loading, contents} = useContents()
 
   const handleSubmit = evt => {
     evt.preventDefault()
-    // navegar a otra ruta
+    // navegate to route
     pushLocation(`/search/${keyword}`)
   }
 
@@ -21,10 +21,15 @@ export default function Home () {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <input placeholder='Search content here ...' onChange={handleChange} type='text' value={keyword} />
+      <form className="App-field" onSubmit={handleSubmit}>
+          <input 
+            type='text'
+            value={keyword}
+            placeholder='Buscar contenido...'
+            onChange={handleChange}
+          />
       </form>
-      <h3 className='App-title'>Ultima busqueda</h3>
+      <h3 className='App-title'>Última búsqueda</h3>
       <ListOfContents contents={contents} />
     </>
   )

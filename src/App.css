@@ -8,7 +8,8 @@
 }
 
 .App-title {
-  color: #8d5aa4;
+  color: #ffffff;
+  margin-bottom: 25px;
 }
 
 .App-content {
@@ -16,8 +17,53 @@
   color: white;
   display: flex;
   flex-direction: column;
-  font-size: calc(10px + 2vmin);
   min-height: 100vh;
   padding: 16px;
   text-align: left;
+}
+
+.App-field {
+  margin: 0 auto 40px;
+}
+.App-field.focussed input {
+  padding: 24px 16px 8px 16px;
+}
+.App-field.focussed input + label {
+  top: 4px;
+  opacity: 1;
+  color: #28cc70;
+}
+.App-field.locked {
+ pointer-events: none;
+}
+.App-field input {
+  margin: auto;
+  width: 400px;
+  height: 56px;
+  position: relative;
+  padding: 0px 16px;
+  border: none;
+  border-radius: 4px;
+  font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  background-color: #eeeeee;
+  color: #282828;
+  outline: none;
+  box-shadow: 0px 4px 20px 0px #eeeeee;
+  transition: 0.3s background-color ease-in-out, 0.3s box-shadow ease-in-out, 0.1s padding ease-in-out;
+  -webkit-appearance: none;
+}
+.App-field input::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.8);
+}
+.App-field input::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.8);
+}
+.App-field input:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.8);
+}
+.App-field input:-moz-placeholder {
+  color: rgba(0, 0, 0, 0.8);
 }

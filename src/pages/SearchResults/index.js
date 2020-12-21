@@ -6,7 +6,6 @@ import {useContents} from '../../hooks/useContents'
 export default function SearchResults ({ params }) {
   const { keyword } = params
   const { loading, contents } = useContents({ keyword })
-  console.log(keyword)
   return <>
     {loading
       ? <Spinner />
